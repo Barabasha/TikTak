@@ -1,6 +1,6 @@
 public class TikTak {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         TikTakObject obj = new TikTakObject();
         Tik tik = new Tik(obj);
         Tak tak = new Tak(obj);
@@ -8,5 +8,8 @@ public class TikTak {
         Thread threadTak = new Thread(tak);
         threadTik.start();
         threadTak.start();
+        Thread.sleep(500);
+        threadTik.interrupt();
+        threadTak.interrupt();
     }
 }

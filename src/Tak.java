@@ -1,7 +1,7 @@
-public class Tak extends Thread{
-    TikTakObject obj = new TikTakObject();
+public class Tak extends Thread {
+    private TikTakObject obj = new TikTakObject();
 
-    public Tak(TikTakObject obj) {
+    Tak(TikTakObject obj) {
         this.obj = obj;
     }
 
@@ -14,7 +14,7 @@ public class Tak extends Thread{
                 try {
                     obj.wait();
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    Thread.currentThread().interrupt();
                 }
             }
         }

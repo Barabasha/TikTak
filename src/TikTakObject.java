@@ -1,4 +1,4 @@
-public class TikTakObject {
-    public TikTakObject() {
+class TikTakObject {
+    TikTakObject() {
     }
 }

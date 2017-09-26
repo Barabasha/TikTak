@@ -1,12 +1,12 @@
-public class Tik extends Thread{
-    TikTakObject obj = new TikTakObject();
+public class Tik extends Thread {
+    private TikTakObject obj = new TikTakObject();
 
-    public Tik(TikTakObject obj) {
+    Tik(TikTakObject obj) {
         this.obj = obj;
     }
 
     @Override
-    public void run(){
+    public void run() {
         synchronized (obj) {
             for (int i = 0; i < 10; i++) {
                 System.out.println("Tik");
@@ -14,7 +14,7 @@ public class Tik extends Thread{
                 try {
                     obj.wait();
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    Thread.currentThread().interrupt();
                 }
             }
         }
